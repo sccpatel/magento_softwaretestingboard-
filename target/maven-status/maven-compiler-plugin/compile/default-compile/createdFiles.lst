@@ -1,0 +1,5 @@
+com\magento\automation\MyAccountPage.class
+com\magento\automation\SignUpPage.class
+com\magento\automation\SignInPage.class
+com\magento\utils\WebUtil.class
+com\magento\automation\HomePage.class

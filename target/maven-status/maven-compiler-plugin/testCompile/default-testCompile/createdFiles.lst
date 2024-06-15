@@ -1,0 +1,4 @@
+com\magento\TestRunner.class
+com\magento\stepdefinitions\Hooks.class
+com\magento\PicoFactory.class
+com\magento\stepdefinitions\SignUpSteps.class
