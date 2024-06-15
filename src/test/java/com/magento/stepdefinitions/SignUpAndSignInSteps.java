@@ -18,6 +18,7 @@ public class SignUpAndSignInSteps {
     private HomePage hm;
     private String userName;
     private SignInPage signInPage;
+    private static String email=null;
 
     public SignUpAndSignInSteps(WebUtil webUtil) {
         this.webUtil = webUtil;
@@ -36,7 +37,9 @@ public class SignUpAndSignInSteps {
     @When("^the user enters valid details$")
     public void the_user_enters_valid_details() {
         signUpPage = new SignUpPage(webUtil);
-       String  userName = "palel.doe07@gmail.com";
+       String name= webUtil.getRandomName(3);
+       email = "patel"+name+"@gmail.com";
+       String  userName = email;
         signUpPage.enterDetails("virendra", "man", userName, "Password@123");
     }
 
@@ -46,7 +49,7 @@ public class SignUpAndSignInSteps {
         signUpPage.scrollToSubmitButton();
         webUtil.onHold(5);
         signUpPage.createAccountButton();
-    }
+    } 
 
     @Then("^the user should be signed up successfully$")
     public void the_user_should_be_signed_up_successfully() {
@@ -72,7 +75,7 @@ public class SignUpAndSignInSteps {
     @When("^the user enters valid credentials$")
     public void the_user_enters_valid_credentials() {
         webUtil.onHold(5);
-        String userName = "palel.doe07@gmail.com";
+        String userName = email;
         signInPage = new SignInPage(webUtil);
         signInPage.signIn(userName);
  
